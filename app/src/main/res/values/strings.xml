@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FirstHomeWorkProject</string>
+    <string name="crash_toast">Crash!</string>
+    <string name="death_toast">You died!</string>
+</resources>
