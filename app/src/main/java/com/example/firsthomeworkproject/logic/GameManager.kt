@@ -31,33 +31,27 @@ class GameManager {
 
 
     fun tick(): Boolean {
-        var crash = false
 
-        // Check collision on bottom row before shifting
         if (obstacles[rows - 1][carLane]) {
-            crash = true
             lives--
             clearBoard()
             return true
         }
 
-        // Move obstacles down
         for (row in rows - 1 downTo 1) {
             for (lane in 0 until lanes) {
                 obstacles[row][lane] = obstacles[row - 1][lane]
             }
         }
 
-        // Clear top row
         for (lane in 0 until lanes) {
             obstacles[0][lane] = false
         }
 
-        // Spawn new obstacle (max one)
         val spawnLane = Random.nextInt(lanes)
         obstacles[0][spawnLane] = true
 
-        return crash
+        return false
     }
 
     fun getObstacle(row: Int, lane: Int): Boolean {

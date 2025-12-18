@@ -1,6 +1,5 @@
 package com.example.firsthomeworkproject
 
-import android.os.Build
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
@@ -114,7 +113,7 @@ class MainActivity : AppCompatActivity() {
             .load(url)
             .centerCrop()
             .placeholder(R.drawable.placeholder)
-            .into(main_IMG_backround);
+            .into(main_IMG_backround)
 
         refreshLivesUI()
         refreshCarUI()
